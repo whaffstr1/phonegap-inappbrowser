@@ -49,24 +49,7 @@ public class InAppBrowserDialog extends Dialog {
             // better to go through the in inAppBrowser
             // because it does a clean up
             if (this.inAppBrowser.hardwareBack() && this.inAppBrowser.canGoBack()) {
-                // this.inAppBrowser.goBack();
-              AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context)
-                .setTitle("Exit")
-                .setMessage("You are about to exit, are you sure?")
-                .setPositiveButton("Exit", new DialogInterface.OnClickListener(){
-                  public void onClick(DialogInterface dialog, int which){
-                    inAppBrowser.closeDialog();
-                  }
-        
-        
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
-                    public void onClick(DialogInterface dialog,int which){
-                        dialog.cancel();
-                    }
-                });
-                alertDialogBuilder.create();
-                alertDialogBuilder.show();
+                this.inAppBrowser.goBack();
             }  else {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context)
                 .setTitle("Exit")
